@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -19,7 +20,8 @@ class Event(models.Model):
    
 
 class EmailLog(models.Model):
-   
+    
+    name=models.CharField(max_length=150)
     event_type = models.CharField(max_length=50)
     status = models.CharField(max_length=20)
     error_message = models.TextField(null=True, blank=True)

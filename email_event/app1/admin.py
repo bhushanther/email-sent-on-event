@@ -18,7 +18,7 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(EmailLog)
 class EmailLogAdmin(admin.ModelAdmin):
-    list_display=['event_type','status','error_message', 'sent_at']     
+    list_display=['name','event_type','status','error_message', 'sent_at']     
 
 
 

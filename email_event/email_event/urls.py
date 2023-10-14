@@ -1,9 +1,9 @@
 
 from django.contrib import admin
-from django.urls import path
-from app1 import views
+from django.urls import path,include
+import app1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.get_events),
+    path('get_api/',include('app1.urls')),
 ]

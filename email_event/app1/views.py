@@ -42,6 +42,7 @@ def get_events(request):
                 send_mail(subject, message, from_email, recipient_list )
             except:
                 report = EmailLog.objects.create(
+                    name=name,
                     event_type=event_event_type, 
                     status='delivery fail', 
                     error_message='error in message', 
@@ -51,6 +52,7 @@ def get_events(request):
                 return Response({'msg': 'mail not sent'})
             else: 
                 report = EmailLog.objects.create(
+                    name=name,
                     event_type=event_event_type, 
                     status='delivery success', 
                     error_message='no error', 
